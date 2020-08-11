@@ -6,6 +6,7 @@
 <!-- header 임포트 -->
 <jsp:include page="/WEB-INF/views/include/header.jsp" />
 
+
 		<!-- //Global_menu -->
 		
 		<!-- Live_container -->
