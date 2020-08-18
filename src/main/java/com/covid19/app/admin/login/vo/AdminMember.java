@@ -1,4 +1,4 @@
-package com.covid19.app.admin.model.vo;
+package com.covid19.app.admin.login.vo;
 
 public class AdminMember {
 

@@ -10,8 +10,7 @@
 	</settings>
 	<typeAliases>
 		<!--타입얼리어스 -->
-		<typeAlias type="com.covid19.app.admin.model.vo.AdminMember" alias="ADMIN"/>
-		<typeAlias type="com.covid19.app.admin.model.vo.AdminTestVo" alias="TEST"/>
+		<typeAlias type="com.covid19.app.admin.login.vo.AdminMember" alias="ADMIN"/>
 	</typeAliases>
 	<mappers>
 		<!-- 매퍼매핑 -->
