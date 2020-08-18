@@ -25,7 +25,7 @@
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="/resources/admin/img/apple-icon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/resources/admin/img/favicon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/resources/admin/img/favicon.png">
 </head>
 
@@ -36,7 +36,7 @@
 		
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img src="/resources/admin/img/logo-dark.png" alt="Klorofil Logo" class="imglogo logo"></a>
+				<a href="/admain.do"><img src="/resources/admin/img/covid-19-logo.png" alt="covid-19 Logo" class=""></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -76,10 +76,10 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/resources/admin/img/user.png" class="img-circle" alt="Avatar"> <span>Admin</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>프로필</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>메세지</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>설정</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>로그아웃</span></a></li>
+<!-- 								<li><a href="#"><i class="lnr lnr-user"></i> <span>프로필</span></a></li> -->
+<!-- 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>메세지</span></a></li> -->
+<!-- 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>설정</span></a></li> -->
+								<li><a href="/adlogout.do"><i class="lnr lnr-exit"></i> <span>로그아웃</span></a></li>
 							</ul>
 						</li>
 <!-- 						<li>
@@ -97,24 +97,31 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
+<!-- 						<li><a href="/admain.do" class=""><i class=""></i> <span>홈</span></a></li> -->
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class=""></i> <span>게시판 관리</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
+							<a href="#subPages1" data-toggle="collapse" class="collapsed"><i class=""></i> <span>게시판 관리</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages1" class="collapse ">
 								<ul class="nav">
-									<li><a href="#" class="">커뮤니티</a></li>
-									<li><a href="#" class="">쇼핑</a></li>
-									<li><a href="#" class="">QnA</a></li>
+									<li><a href="/adboard.do" class="">커뮤니티</a></li>
+									<li><a href="/adshop.do" class="">쇼핑</a></li>
+									<li><a href="/adqna.do" class="">QnA</a></li>
 								</ul>
 							</div>
 						</li>
-						<li><a href="#" class=""><i class=""></i> <span>게시판 관리</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>쇼핑 관리</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>QnA</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li>
-						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li>
+						<li>
+							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class=""></i> <span>사용자 관리</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages2" class="collapse ">
+								<ul class="nav">
+									<li><a href="/adseller.do" class="">판매자 권한</a></li>
+									<li><a href="/admemberlist.do" class="">회원 상세정보</a></li>
+									<li><a href="#" class="">추후 수정</a></li>
+								</ul>
+							</div>
+						</li>
+<!-- 						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li> -->
+<!-- 						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li> -->
+<!-- 						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li> -->
+<!-- 						<li><a href="#" class=""><i class=""></i> <span>추후 수정</span></a></li> -->
 					</ul>
 				</nav>
 			</div>

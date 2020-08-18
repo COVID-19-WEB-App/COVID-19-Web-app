@@ -6,6 +6,7 @@
     
 <mapper namespace="ADMIN">
 
+	<!-- 로그인 -->
 	<select id="selectAdmin" resultType="ADMIN">
 	
 		SELECT 
@@ -16,5 +17,5 @@
 			adminId = #{adminId} and password = #{password}
 	
 	</select>
-
+	
 </mapper>
