@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- 
-<!-- header 임포트 -->
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-=======
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ page session="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -14,7 +5,6 @@
 
 <jsp:include page="/header.do" />
 
->>>>>>> fb7824dd5425af698f86e888c9aee5a570afb997
 
 
 		<!-- //Global_menu -->
