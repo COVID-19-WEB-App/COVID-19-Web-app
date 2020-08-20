@@ -33,7 +33,7 @@
 							<div class="header">
 								<div class="logo text-center"><h2>COVID-19</h2></div>
 							</div>
-							<form class="form-auth-small" action="/adloginimpl.do" method="post">
+							<form class="form-auth-small" action="/admin/adloginimpl.do" method="post">
 								<!-- 아이디 -->
 								<div class="form-group">
 									<input type="text" class="form-control" id="adminId" name="adminId" placeholder="아이디를 입력하세요."/>
@@ -43,7 +43,7 @@
 								
 								<!-- 패스워드 -->
 								<div class="form-group">
-									<input type="text" class="form-control" id="password" name="password" placeholder="패스워드를 입력하세요."/>
+									<input type="password" class="form-control" id="password" name="password" placeholder="패스워드를 입력하세요."/>
 								</div>
 								<!-- 패스워드 끝 -->
 								

@@ -1,5 +1,6 @@
 package com.covid19.app.admin.controller;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -19,12 +20,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.covid19.app.HomeController;
 import com.covid19.app.admin.login.service.AdminService;
 import com.covid19.app.admin.login.vo.AdminMember;
+import com.covid19.app.admin.login.vo.Adtest;
 
 @Controller
+@RequestMapping("admin")
 public class AdminController {
 	
 	@Autowired
-	public AdminService adminService;
+	private AdminService adminService;
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
@@ -58,12 +61,12 @@ public class AdminController {
 		if( res != null) {
 
 			mav.addObject("alertMsg", "로그인 성공");
-			mav.addObject("url", request.getContextPath()+ "/admain.do");
+			mav.addObject("url", request.getContextPath()+ "/admin/admain.do");
 			
 		} else {
 			
 			mav.addObject("alertMsg", "로그인 실패");
-			mav.addObject("url", request.getContextPath()+ "/adlogin.do");
+			mav.addObject("url", request.getContextPath()+ "/admin/adlogin.do");
 		}
 		
 		mav.setViewName("common/result");
@@ -72,5 +75,28 @@ public class AdminController {
 		
 	}
 	
+	//확진자 페이지
+	@RequestMapping(value = "/adconfirmed.do", method = RequestMethod.GET)
+	public String adminConfirmed(Locale locale, Model model) {
+		
+		logger.info("확진자 페이지", locale);
+		
+		return "admin/board/confirmed";
+		
+	}
+	
+	
+	
+	
+	//회원상세정보 페이지
+	@RequestMapping(value = "/aduserdetail.do", method = RequestMethod.GET)
+	public String adminDetail(Locale locale, Model model) {
+		
+		logger.info("회원 상세정보", locale);
+		
+		return "admin/board/userdetail";
+		
+	}
+
 	
 }

@@ -12,9 +12,6 @@
 		<!--타입얼리어스 -->
 		<typeAlias type="com.covid19.app.admin.login.vo.AdminMember" alias="ADMIN"/>
 	</typeAliases>
-	<mappers>
-		<!-- 매퍼매핑 -->
-		<mapper resource="/mybatis/mapper/AdminMapper.xml"/>
-	</mappers>
+
 	
 </configuration>

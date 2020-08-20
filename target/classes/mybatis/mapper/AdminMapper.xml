@@ -16,5 +16,7 @@
 			adminId = #{adminId} and password = #{password}
 	
 	</select>
-
+	
+	
+	
 </mapper>
