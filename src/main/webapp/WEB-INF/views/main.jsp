@@ -5,8 +5,6 @@
 
 <jsp:include page="/header.do" />
 
-
-
 		<!-- //Global_menu -->
 		
 		<!-- Live_container -->
