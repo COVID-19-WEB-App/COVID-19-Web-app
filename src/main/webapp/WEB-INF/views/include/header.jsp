@@ -231,6 +231,7 @@ function openNav() {
 			  <a href="#contact" style="font-size:13px; position:absolute;bottom:10px;"><i class="fa  fa-sign-out-alt"></i> 로그아웃</a>			  
 			</div>
 
+<<<<<<< HEAD
 			<!-- Header -->
 		<div id="header" class="header">
 			<div>
@@ -495,3 +496,6 @@ function openNav() {
 			</div>
 		</div>
 		
+
+</body>
+</html>
