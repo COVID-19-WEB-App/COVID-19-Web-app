@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<mapper namespace="SHARE">
+	<insert id="shareUpload">
+		insert into shar(share_idx,shareField,shareName,simpleInfo,shareContent,shareDate,shareDateEn,sharemoney)
+		values(
+		SHARE_SEQ.nextval,#{shareField},#{shareName}
+		, #{simpleInfo} , #{shareContent} , #{shareDate} , SYSDATE ,#{sharemoney}
+		)
+	</insert>
+		<insert id="insertFile">
+		insert into share_file
+		(f_idx, origin_file,
+		 rename_file, save_path , reg_date)
+		values(
+		SHFILE_SEQ.nextval, 
+		#{originfile},
+		#{renamefile},
+		#{savepath},
+		sysdate
+		)
+	</insert>
+	
+	<insert id="insertThumb">
+		
+		insert into share_thumb
+			(t_idx, share_idx , origin_file,
+			 rename_file, save_path)
+		values(
+			thumb_seq.nextval, 
+			SHARE_SEQ.currval,
+			#{originfile},
+			#{renamefile},
+			#{savePath}
+		)
+		
+	
+	</insert>	
+	
+	
+
+
+</mapper>

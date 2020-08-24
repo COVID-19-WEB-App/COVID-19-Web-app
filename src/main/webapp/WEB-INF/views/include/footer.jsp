@@ -85,9 +85,9 @@
 		
 
 		<div class="body_bg"></div>
-		</div>
 		<script>
+		
 		function goTop(){
 			$('html').scrollTop(0);
-	</script>
 }
+	</script>
