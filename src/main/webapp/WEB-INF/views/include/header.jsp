@@ -287,11 +287,11 @@ function openNav() {
                                     </ul>
                                 </div></div>
                             </li>
-                            <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">홍보자료 & FAQ</a>
+                            <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">정보공유 & FAQ</a>
                                 <div class="g_sub"><div>
                                     <ul>
-                                        <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">&middot; 홍보자료</a></li>
-                                        <li><a href="faqBoardList0b7a.html?brdId=3&amp;brdGubun=37">&middot; FAQ</a></li>
+                                        <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">&middot; 정보공유</a></li>
+                                        <li><a href="faqBoard.do">&middot; FAQ</a></li>
                                     </ul>
                                 </div></div>
                             </li>
