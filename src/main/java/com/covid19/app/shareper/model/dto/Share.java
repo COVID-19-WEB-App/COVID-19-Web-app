@@ -9,7 +9,7 @@ public class Share {
 	private String simpleInfo;
 	private String shareContent;
 	private Date shareDate;
-	private int sharemoney;
+	private String sharemoney;
 	@Override
 	public String toString() {
 		return "Share [shareField=" + shareField + ", shareName=" + shareName + ", simpleInfo=" + simpleInfo
@@ -45,10 +45,10 @@ public class Share {
 	public void setShareDate(Date shareDate) {
 		this.shareDate = shareDate;
 	}
-	public int getSharemoney() {
+	public String getSharemoney() {
 		return sharemoney;
 	}
-	public void setSharemoney(int sharemoney) {
+	public void setSharemoney(String sharemoney) {
 		this.sharemoney = sharemoney;
 	}
 	

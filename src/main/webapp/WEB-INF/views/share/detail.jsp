@@ -205,7 +205,7 @@
     
     <main id="omcContainer" class="cont_support">
         
-        
+      	${list }  
             <!-- aside -->
             
             <!--  aside -->

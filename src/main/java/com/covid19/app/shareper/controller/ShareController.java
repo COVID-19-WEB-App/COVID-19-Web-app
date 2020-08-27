@@ -6,18 +6,20 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.tribes.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,23 +33,40 @@ public class ShareController {
 	ShareService shareSer = new ShareService();
 	
 	@RequestMapping("/share/list.do")
-	public ModelAndView slist() {
+	public ModelAndView slist(
+			@RequestParam(required=false, defaultValue="1") 
+			int cPage,
+			HttpServletResponse res
+			) {
 		
 		ModelAndView mav = new ModelAndView();
-		
+		int cntPerPage = 16;
+		Map<String,Object> map = shareSer.selectSlist(cPage, cntPerPage);
+
+		mav.addObject("paging", map.get("paging"));
+		mav.addObject("list", map);
+		if(cPage == 1) {
 		mav.setViewName("share/list");
+		}else {
+			mav.setViewName("share/scroll");
+		}
 		return mav;
-		
-		
 	}
+	
+	
+	
 	@RequestMapping("/share/detail.do")
-	public ModelAndView sdetail() {
+	public ModelAndView sdetail(@RequestParam int share_idx) {
 		
 		ModelAndView mav = new ModelAndView();
-		
+		Map<String,Object> map = shareSer.sharedetail(share_idx);
+		mav.addObject("list", map);
 		mav.setViewName("share/detail");
 		return mav;
 	}
+	
+	
+	
 	@RequestMapping("/share/board.do")
 	public ModelAndView sboard() {
 	
@@ -73,18 +92,12 @@ public class ShareController {
 		
 	}
 	
-	
-	
-	
-	
 		@RequestMapping(value = "/share/fileup.do", method = RequestMethod.POST)
 		public void file_uploader_html5(HttpServletRequest request,
 				HttpServletResponse response)
 		{ 
-			
 			try {
 				ShareFile shf = new ShareFile();
-				
 			//파일정보
 			String sFileInfo = ""; 
 			//파일명을 받는다 - 일반 원본파일명
@@ -146,12 +159,11 @@ public class ShareController {
 				PrintWriter print = response.getWriter(); print.print(sFileInfo); 
 				print.flush();
 				print.close(); } 
-			
 			} 
 		catch (Exception e) { e.printStackTrace(); }
 			}
-			
-		}
+
+}
 
 	
 	

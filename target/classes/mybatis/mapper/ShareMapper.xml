@@ -41,8 +41,29 @@
 		
 	
 	</insert>	
+	<select id = "selectshar" resultType="HashMap">
+	select share_idx,sharefield,sharename,simpleinfo,sharecontent,sharemoney,sharedateen,rename_file
+                from(
+                    select rownum rnum , s3.*
+			from(
+				select s.sharefield,s.sharename,s.simpleinfo,s.sharecontent,s.sharemoney,s.sharedateen,s.share_idx,st.rename_file 
+				from shar s, share_thumb st
+                where s.share_idx = st.share_idx
+				order by s.share_idx desc
+			)s3
+		)where rnum between #{start} and #{end}
+
+	</select>
 	
-	
+	<select id="selectContentCnt" resultType="int">
+		select count(*) from shar
+	</select>
+	<select id="selectDetail" resultType="HashMap">
+		select s.*, st.rename_file
+		from shar s, share_thumb st
+		where s.share_idx = st.share_idx
+        and s.share_idx = #{share_idx}
+	</select>
 
 
 </mapper>
