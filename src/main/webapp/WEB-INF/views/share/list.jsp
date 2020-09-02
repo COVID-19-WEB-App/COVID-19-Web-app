@@ -257,11 +257,10 @@ function loadlist() {
 	
 	<div class="page-wrapper" style="display: block; overflow: auto;">
 	<c:forEach items="${list.nlist }" var="list" varStatus="i">
-	
 		<li class="project_card reward_project_card">
 		    <div class="project_card_inner">
-		     	<a href="/share/detail.do?share_idx=${list.SHARE_IDX }" class="project_detail_link">
-		        	<span class="project_thumbnail" style="background-image:url('/resources/upload/share/${list.RENAME_FILE}')"></span>
+		     	<a href="/share/detail.do?shareDate=${list.SHAREDATE }&share_idx=${list.SHARE_IDX }" class="project_detail_link">
+		        	<span class="project_thumbnail" style="background-image:url('/resources/upload/share/${list.RENAME_FILE }')"></span>
 		        </a>
 		        <div class="project_card_info">
 		            <span class="screen_out">${list.SHARE_NAME }</span>

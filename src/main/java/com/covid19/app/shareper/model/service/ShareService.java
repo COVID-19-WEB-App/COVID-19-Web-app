@@ -1,15 +1,18 @@
 package com.covid19.app.shareper.model.service;
 
-import java.util.ArrayList;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.covid19.app.shareper.model.dao.ShareDao;
+import com.covid19.app.shareper.model.dto.Goods;
 import com.covid19.app.shareper.model.dto.Share;
 import com.covid19.app.shareper.model.dto.ShareFile;
 
@@ -22,7 +25,19 @@ public class ShareService {
 	@Autowired
 	private ShareDao sharedao;
 	
-	public void shareup(Share share, List<MultipartFile> file, String root) {
+	public void shareup(Share share, List<MultipartFile> file, String root , HttpServletRequest req) {
+		
+		String[] gn = req.getParameterValues("goodsName");
+		String[] pr = req.getParameterValues("price");
+		String[] gs = req.getParameterValues("goodsStock");
+	
+		for(int i=0; i<gn.length; i++){
+			Goods goods = new Goods();
+			goods.setGoodsName(gn[i]);
+			goods.setPrice(pr[i]);
+			goods.setGoodsStock(Integer.parseInt(gs[i]));
+			sharedao.insertGoods(goods);
+		}
 		
 		sharedao.insertBoard(share);
 		
@@ -65,7 +80,9 @@ public class ShareService {
 	public Map<String, Object> sharedetail(int share_idx) {
 		Map<String, Object> commandMap 
  		= new HashMap<String, Object>();
+		
 		List<Share> dlist = sharedao.sharedetail(share_idx);
+		
 		commandMap.put("dlist", dlist);
 		System.out.println(commandMap);
 		return commandMap;

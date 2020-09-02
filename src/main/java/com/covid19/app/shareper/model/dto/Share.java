@@ -10,10 +10,18 @@ public class Share {
 	private String shareContent;
 	private Date shareDate;
 	private String sharemoney;
+	public int getSharedDay() {
+		return sharedDay;
+	}
+	public void setSharedDay(int sharedDay) {
+		this.sharedDay = sharedDay;
+	}
+	private int sharedDay;
 	@Override
 	public String toString() {
 		return "Share [shareField=" + shareField + ", shareName=" + shareName + ", simpleInfo=" + simpleInfo
-				+ ", shareContent=" + shareContent + ", shareDate=" + shareDate + ", sharemoney=" + sharemoney + "]";
+				+ ", shareContent=" + shareContent + ", shareDate=" + shareDate + ", sharemoney=" + sharemoney
+				+ ", sharedDay=" + sharedDay + "]";
 	}
 	public String getShareField() {
 		return shareField;

@@ -5,8 +5,8 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -56,11 +56,22 @@ public class ShareController {
 	
 	
 	@RequestMapping("/share/detail.do")
-	public ModelAndView sdetail(@RequestParam int share_idx) {
+	public ModelAndView sdetail(@RequestParam int share_idx,
+			@RequestParam String shareDate ) {
 		
 		ModelAndView mav = new ModelAndView();
+		String paramDate = shareDate.substring(0, 10);
+		java.sql.Date sharedDay = java.sql.Date.valueOf(paramDate);
+		
+		Date endday = sharedDay;
+		Date sysdate = new java.sql.Date(new java.util.Date().getTime());
+		long hidate = endday.getTime() - sysdate.getTime();
+		int dDay = (int)Math.floor(hidate/(1000*60*60*24)+1);
+		
 		Map<String,Object> map = shareSer.sharedetail(share_idx);
-		mav.addObject("list", map);
+		
+		mav.addObject("list", map.get("dlist"));
+		mav.addObject("dDay", dDay);
 		mav.setViewName("share/detail");
 		return mav;
 	}
@@ -78,22 +89,27 @@ public class ShareController {
 	}
 	
 	@RequestMapping(value = "/share/boardup.do", method = RequestMethod.POST)
-	public String supload(
-			Share share,
+	public ModelAndView supload(
+
 			HttpSession session,
-			List<MultipartFile> file
+			Share share,
+			List<MultipartFile> file,
+			HttpServletRequest request
 			) {
-		
+		ModelAndView mav = new ModelAndView(); 
 		String root = session.getServletContext().getRealPath("/");
 
-		shareSer.shareup(share,file,root);
 		
-		return "share/list";
+		shareSer.shareup(share,file,root,request);
+		
+		mav.setViewName("share/list");
+		
+		return mav;
 		
 	}
 	
-		@RequestMapping(value = "/share/fileup.do", method = RequestMethod.POST)
-		public void file_uploader_html5(HttpServletRequest request,
+	@RequestMapping(value = "/share/fileup.do", method = RequestMethod.POST)
+	public void file_uploader_html5(HttpServletRequest request,
 				HttpServletResponse response)
 		{ 
 			try {
@@ -163,6 +179,8 @@ public class ShareController {
 		catch (Exception e) { e.printStackTrace(); }
 			}
 
+			
+	
 }
 
 	
@@ -191,19 +209,6 @@ public class ShareController {
 	
 	
 	
-	
-//	@RequestMapping(value = "/share/thumup.do", method = RequestMethod.POST)
-//	public String supload(Share share) {
-//		
-//		
-//		System.out.println("여기는 share : "+share);
-//		
-//		shareSer.shareup(share);
-//		
-//		return "share/list";
-//		
-//		
-//	}
 
 
 

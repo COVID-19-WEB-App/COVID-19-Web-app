@@ -10,7 +10,7 @@
 	
 		<li class="project_card reward_project_card">
 		    <div class="project_card_inner">
-		     	<a href="/share/detail.do" class="project_detail_link">
+		     	<a href="/share/detail.do?share_idx=${list.SHARE_IDX }" class="project_detail_link">
 		        	<span class="project_thumbnail" style="background-image:url('/resources/upload/share/${list.RENAME_FILE}')"></span>
 		        </a>
 		        <div class="project_card_info">
