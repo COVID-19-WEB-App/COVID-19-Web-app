@@ -65,6 +65,11 @@
 		where s.share_idx = st.share_idx
         and s.share_idx = #{share_idx}
 	</select>
+	
+	<insert id="insertGoods">
+		insert into share_goods
+		values(goods_seq.nextval,share_seq.currval,#{goodsName},#{price},#{goodsStock} )
+	</insert>
 
 
 </mapper>

@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.ProcessBuilder.Redirect;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -102,7 +103,8 @@ public class ShareController {
 		
 		shareSer.shareup(share,file,root,request);
 		
-		mav.setViewName("share/list");
+		
+		mav.setViewName("redirect:list.do");
 		
 		return mav;
 		

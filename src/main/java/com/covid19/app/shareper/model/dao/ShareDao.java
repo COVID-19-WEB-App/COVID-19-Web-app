@@ -52,8 +52,7 @@ public class ShareDao {
 
 
 	public void insertGoods(Goods goods) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.insert("SHARE.insertGoods", goods);
 	}
 
 

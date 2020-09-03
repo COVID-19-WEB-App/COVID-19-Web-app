@@ -26,6 +26,9 @@ public class ShareService {
 	private ShareDao sharedao;
 	
 	public void shareup(Share share, List<MultipartFile> file, String root , HttpServletRequest req) {
+
+		
+		sharedao.insertBoard(share);
 		
 		String[] gn = req.getParameterValues("goodsName");
 		String[] pr = req.getParameterValues("price");
@@ -39,7 +42,6 @@ public class ShareService {
 			sharedao.insertGoods(goods);
 		}
 		
-		sharedao.insertBoard(share);
 		
 		if(!(file.size() == 1
 				&& file.get(0).getOriginalFilename().equals(""))) {
