@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.covid19</groupId>
 	<artifactId>app</artifactId>
-	<name>COVID_19_Web_Project</name>
+	<name>COVID-19-Web-app</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<!-- 버전 정보 저장 -->
