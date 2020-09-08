@@ -25,8 +25,8 @@
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="/resources/admin/img/favicon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/resources/admin/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/resources/static/image/header/ROK.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/resources/static/image/header/ROK.png">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 		
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="/admin/admain.do"><img src="/resources/admin/img/logo-dark.png" alt="Klorofil Logo" class="imglogo logo"></a>
+				<a href="/admin/admain.do"><img src="/resources/admin/img/covidlogo.png" alt="Logo" class="imglogo logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -108,9 +108,9 @@
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class=""></i> <span>게시판 관리</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
 								<ul class="nav">
-									<li><a href="#" class="">커뮤니티</a></li>
-									<li><a href="#" class="">쇼핑</a></li>
-									<li><a href="#" class="">QnA</a></li>
+									<li><a href="/admin/adboard.do" class="">커뮤니티</a></li>
+									<li><a href="/admin/adshrelist.do" class="">쇼핑</a></li>
+									<li><a href="/admin/adfaq.do" class="">FAQ</a></li>
 								</ul>
 							</div>
 						</li>
@@ -118,8 +118,8 @@
 							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class=""></i> <span>사용자 관리</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
 								<ul class="nav">
-									<li><a href="/admin/aduserdetail.do" class="">회원 상세정보</a></li>
-									<li><a href="#" class="">판매자 관리</a></li>
+									<li><a href="/admin/aduserlist.do" class="">회원 상세정보</a></li>
+									<li><a href="/admin/adseller.do" class="">판매자 관리</a></li>
 									<li><a href="#" class="">추후 수정</a></li>
 								</ul>
 							</div>

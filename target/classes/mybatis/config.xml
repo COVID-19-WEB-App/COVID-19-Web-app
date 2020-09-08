@@ -10,8 +10,14 @@
 	</settings>
 	<typeAliases>
 		<!--타입얼리어스 -->
-		<typeAlias type="com.covid19.app.admin.login.vo.AdminMember" alias="ADMIN"/>
+		<typeAlias type="com.covid19.app.admin.login.vo.AdminMember" alias="Admin"/>
+		<typeAlias type="com.covid19.app.admin.login.vo.AdMemberList" alias="Admember"/>
 	</typeAliases>
 
+<!-- 	<mappers> -->
+		
+<!-- 		<mapper resource="/mapper/AdminMapper.xml"/> -->
+		
+<!-- 	</mappers> -->
 	
 </configuration>

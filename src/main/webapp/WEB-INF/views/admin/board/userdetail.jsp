@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
+<%@page import="javax.naming.Context"%>
 
 <!-- bootstrap -->
 <script src="/resources/admin/vendor/jquery/jquery.min.js"></script>
@@ -14,6 +15,43 @@
 <script src="/resources/admin/vendor/chartist/js/chartist.min.js"></script>
 <script src="/resources/admin/scripts/klorofil-common.js"></script>
 
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#keyword").keydown(function(e) {
+		if(e.keyCode == 13) {
+			$("#btnSearch").click()
+		}
+	})
+})
+
+</script>
+
+<script type="text/javascript">
+
+function checkAll(){
+    if( $("#checkAll").is(':checked') ){
+      $("input[name=checkRow]").prop("checked", true);
+    }else{
+      $("input[name=checkRow]").prop("checked", false);
+    }
+}
+
+$(document).ready(function(){
+	
+	//삭제버튼 동작
+	$("#btnDelete").click(function(){
+		
+		//실제 <form>의 submit 수행
+		$("#checkboxlist").submit();
+		
+	});
+	
+});
+
+</script>
+
+
 <style>
 
 	#btnDelete{
@@ -22,6 +60,7 @@
 		margin-right: 10px;
 		
 	}
+	
 
 </style>
 
@@ -31,9 +70,9 @@
 <div class="main">
 
 	<div class="main-content">
-
+	
 		<div class="container-fluid">
-
+		
 			<div class="panel panel-headline">
 
 				<!-- 헤드라인 -->
@@ -44,48 +83,82 @@
 				<!-- 헤드라인 END -->
 
 				<div class="panel-body">
-
+				
+				<form action="${pageContext.request.contextPath}/admin/aduserdelete.do" method="post" id="checkboxlist">
+				
 					<table class="table table-hover">
 
 						<thead>
 							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Username</th>
+								<th style="width: 5%;"><input type="checkbox" id="checkAll" onclick="checkAll();"/></th>
+								<th style="width: 10%;">이름</th>
+								<th style="width: 20%;">주소</th>
+								<th style="width: 20%;">전화번호</th>
+								<th style="width: 15%;">Email</th>
+								<th style="width: 25%;">등급</th>
 							</tr>
 						</thead>
 						
-							<c:forEach items="${list }" var="a">
 						<tbody>
+							<c:forEach items="${list }" var="a">
 							<tr>
-								<td>${a.name }</td>
-								<td></td>
-								<td></td>
-							</tr>
-						</tbody>
+								<td><input type="checkbox" id="checkRow" name="checkRow" value="${a.memberNo }"/>
+								<td>${a.memberName }</td>
+								<td>${a.memberAdd }</td>
+								<td>${a.memberTell }</td>
+								<td>${a.memberEmail }</td>
+								<td>${a.memberRank }</td>
+							</tr><!-- class="col-md-2" -->
 							</c:forEach>
+						</tbody>
 
 					</table>
+					</form>
 					
-					<button id="btnInsert" class="btn btn-primary pull-right">추가</button>
-	
+					
+				<div class="panel-footer">
+				
+				<div class="row">
+				
 					<!-- 삭제버튼 -->
 					<button id="btnDelete" class="btn btn-danger pull-right">삭제</button>
-
+<!-- 					<button id="btnInsert" class="btn btn-primary pull-right">추가</button> -->
+					
 					<!-- 검색 -->
+					<form action="${pageContext.request.contextPath}/admin/adusersearch.do" method="post">
 					<div class="form-inline pull-right">
-						<input class="form-control" type="text" id="search"
+<!-- 						<select class="form-control" id="searchType" name="searchType"> -->
+<!-- 							<option value="">검색조건</option> -->
+<!-- 							<option value="">이름</option>  -->
+<!-- 							<option value="">주소</option> -->
+<!-- 							<option value="">등급</option> -->
+<!-- 							<option value="">전화번호</option> -->
+<!-- 							<option value="">Email</option> -->
+<!-- 						</select> -->
+						<input class="form-control" type="text" id="keyword" name="keyword"
 							style="width: 200px;" placeholder="검색어를 입력해주세요" />
 						<button id="btnSearch" class="btn btn-primary">검색</button>
+					
+					</div>
+					</form>
+
+					
+					<br>
+					<!-- 페이징 -->
+					<div style="text-align: center;">
+					<c:import url="/WEB-INF/views/admin/adpaging/adpaging.jsp"></c:import>
 					</div>
 					
+				</div><!-- row -->
+				
+				</div><!-- panel-footer -->
 					
-				</div>
+				</div><!-- panel-body -->
 
-			</div>
+			</div><!-- panel panel-headline -->
 
-		</div>
+		</div><!-- container-fluid -->
 
-	</div>
+	</div><!-- main-content -->
 
-</div>
+</div><!-- main -->

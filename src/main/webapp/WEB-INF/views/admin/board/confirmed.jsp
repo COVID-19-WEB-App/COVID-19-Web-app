@@ -132,7 +132,7 @@ function checkAll() {
 		margin-left: 10px;
 		margin-right: 10px;
 	}
-
+	
 </style>
 
 <!-- 헤더 -->
@@ -180,7 +180,7 @@ function checkAll() {
 						</tbody>
 
 					</table>
-					<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#my80sizeCenterModal">
+					<button id="createBtn" class="btn btn-primary pull-right" data-toggle="modal" data-target="#my80sizeCenterModal">
 						추가
 					</button>
 					
@@ -205,48 +205,93 @@ function checkAll() {
 									
 									<div class="modal-body">
 									
-							        	<form class="form-inline" role="form">
+<!-- 							        	<table id="table"> -->
+<%--        									<colgroup> --%>
+<%-- 											<col style="width:25%;"> --%>
+<%-- 											<col style="width:75%;"> --%>
+<%-- 										</colgroup> --%>
+<!-- 										<tr> -->
+<!-- 											<th scope="row">이름 : </th> -->
+<!-- 											<td class="ta_l"><input type="text" class="form-control"></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>나이 : </th> -->
+<!-- 											<td><input type="text" class="form-control"></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>지역 : </th> -->
+<!-- 											<td>							        	 -->
+<!-- 												<select class="form-control"> -->
+<!-- 								        		<option value="서울특별시">서울특별시</option> -->
+<!-- 								        		<option value="부산광역시">부산광역시</option> -->
+<!-- 								        		<option value="경기도">경기도</option> -->
+<!-- 								        		<option value="제주시">제주시</option> -->
+<!-- 							        			</select> -->
+<!-- 							        		</td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>확진일 : </th> -->
+<!-- 											<td><input type="text" id="datePicker" class="form-control" value="2020-08-19"></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>성별 : </th> -->
+<!-- 											<td> -->
+<!-- 												<label class="fancy-radio"> -->
+<!-- 													<input name="gender" value="male" type="radio"> -->
+<!-- 													<span><i></i>남성</span> -->
+<!-- 												</label> -->
+
+<!-- 												<label class="fancy-radio"> -->
+<!-- 													<input name="gender" value="female" type="radio"> -->
+<!-- 													<span><i></i>여성</span> -->
+<!-- 												</label> -->
+<!-- 											</td>									 -->
+<!-- 										</tr> -->
+<!-- 										</table> -->
+										
+										
+										
+										
+							        	<form class="form-inline" role="form" action="/admin/adconfirmed.do" method="post">
 							        	<div class="form-group">
-							        	
-							        	<span>이름 : </span><input type="text" style="width: 170px;" class="form-control"><br><br>
-							        	
+										
+							        	<span>이름 : </span><input type="text" name="patName" id="patName" style="width: 170px;" class="form-control"><br><br>
 							        	<span>나이 : </span>
-							        	<input type="text" style="width: 170px;" class="form-control"><br><br>
+							        	<input type="text" name="patAge" id="patAge" style="width: 170px;" class="form-control"><br><br>
 							        	
-							        	<span>지역 : </span>
-							        	<select style="width: 170px;" class="form-control">
-							        		<option value="서울특별시">서울특별시</option>
-							        		<option value="부산광역시">부산광역시</option>
-							        		<option value="경기도">경기도</option>
-							        		<option value="제주시">제주시</option>
-							        	</select>
-							        	<br><br>
+<!-- 							        	<span>지역 : </span> -->
+<!-- 							        	<select style="width: 170px;" class="form-control"> -->
+<!-- 							        		<option value="서울특별시">서울특별시</option> -->
+<!-- 							        		<option value="부산광역시">부산광역시</option> -->
+<!-- 							        		<option value="경기도">경기도</option> -->
+<!-- 							        		<option value="제주시">제주시</option> -->
+<!-- 							        	</select> -->
+<!-- 							        	<br><br> -->
 							        	
 							        	<span>확진일 : </span>
 							        	<input type="text" id="datePicker" class="form-control" style="width: 170px;" value="2020-08-19"><br><br>
 							        	
-										<span>동선 : </span>
-										<textarea class="form-control" placeholder="동선을 입력바랍니다." rows="2"></textarea>
-										<br><br>
+<!-- 										<span>동선 : </span> -->
+<!-- 										<textarea class="form-control" placeholder="동선을 입력바랍니다." rows="2"></textarea> -->
+<!-- 										<br><br> -->
 										
-							        	<span>성별 : </span>
-							        	<label class="fancy-radio">
-											<input name="gender" value="male" type="radio">
-											<span><i></i>남성</span>
-										</label>
+<!-- 							        	<span>성별 : </span> -->
+<!-- 							        	<label class="fancy-radio"> -->
+<!-- 											<input name="gender" value="male" type="radio"> -->
+<!-- 											<span><i></i>남성</span> -->
+<!-- 										</label> -->
 										
-										<label class="fancy-radio">
-											<input name="gender" value="female" type="radio">
-											<span><i></i>여성</span>
-										</label><br>
+<!-- 										<label class="fancy-radio"> -->
+<!-- 											<input name="gender" value="female" type="radio"> -->
+<!-- 											<span><i></i>여성</span> -->
+<!-- 										</label><br> -->
 										
 							        	</div>
 							        	</form>
 							        	
 						      		</div>
-						      		
 							      	<div class="modal-footer">
-							      		<button type="button" class="btn btn-primary">추가</button>
+							      		<button id="test" type="button" class="btn btn-primary" data-dismiss="modal">추가</button>
 							        	<button type="button" class="btn btn-default pull-right" data-dismiss="modal">닫기</button>
 							      	</div>
 							      	
@@ -263,4 +308,40 @@ function checkAll() {
 		</div>
 
 	</div>
+<script>
 
+var type='';
+var url='';
+var action='';
+
+$(document).ready(function(){
+
+	$("#createBtn").click(function() {
+		
+		action='create';
+		type='POST'
+		&("#my80sizeCenterModal").modal();	
+		
+	})
+
+	$("#test").click(function(){
+		if(action == 'create'){
+			url = '/admin/board/confirmed"'
+		}
+		
+	})
+	
+	var data = {
+		"PAT_NAME" : $("#patName").val(),
+		"PAT_AGE" : &("#patAge").val()
+	};
+	
+	$.ajax({
+		url : url,
+		type : type,
+		data : data,
+		success : function(data){ ${"my80sizeCenterModal"}.modal('togle'); }
+		complete : function(data){ location.reload(); }
+	});
+});
+</script>
