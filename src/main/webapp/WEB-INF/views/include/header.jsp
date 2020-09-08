@@ -258,7 +258,7 @@ function openNav() {
 					<div id="gnb" class="gnb t_dp_n m_dp_n">
                         
                         <ul>
-                            <li><a href="baroView4f20.html?brdId=4&amp;brdGubun=41">바로알기</a>
+                            <li><a href="/info/aboutCorona19.do">바로알기</a>
                                 <div class="g_sub"><div>
                                     <ul>
                                         <li><a href="/info/aboutCorona19.do">&middot; 코로나19 란? </a></li>
@@ -268,13 +268,13 @@ function openNav() {
                                     </ul>
                                 </div></div>                            
                             </li>
-                            <li><a href="bdBoardList62bd.html?brdId=1&amp;brdGubun=11">발생동향</a>
+                            <li><a href="/domesticPat.do">발생동향</a>
                                 <div class="g_sub"><div>
                                     <ul>
-                                        <li><a href="bdBoardList62bd.html?brdId=1&amp;brdGubun=11">&middot; 국내 발생 현황</a></li>
-                                        <li><a href="bdBoardListb8cf.html?brdId=1&amp;brdGubun=14">&middot; 국외 발생 현황</a></li>
-                                        <li><a href="bdBoardList0949.html?brdId=1&amp;brdGubun=13">&middot; 시도별 발생동향</a></li>
-                                        <li><a href="bdBoardList98a5.html?brdId=1&amp;brdGubun=12">&middot; 확진환자 이동경로</a></li>
+                                        <li><a href="/domesticPat.do">&middot; 국내 발생 현황</a></li>
+                                        <li><a href="/overseaPat.do">&middot; 국외 발생 현황</a></li>
+                                        <li><a href="/detailPat.do">&middot; 시도별 발생동향</a></li>
+                                        <li><a href="/movingPat.do">&middot; 확진환자 이동경로</a></li>
                                     </ul>
                                 </div></div>                              
                             </li>
@@ -327,7 +327,7 @@ function openNav() {
                                     <ul>
                                         <li><a href="guidelineList2bef.html?brdId=6&amp;brdGubun=61">&middot; 기본 수칙</a></li>
 										   <li><a href="guidelineList99ba.html?brdId=6&amp;brdGubun=63">&middot; 공동체 수칙</a></li>
-                                         <li><a href="guidelineList0a61.html?brdId=6&amp;brdGubun=62&amp;dataGubun=">&middot; 장소별 실천수칙</a></li>
+                                         <li><a href="/locRule.do">&middot; 장소별 실천수칙</a></li>
                                     </ul>
                                 </div></div>
                             </li>  
@@ -428,10 +428,10 @@ function openNav() {
                             <li><a href=href%3d_javascript_void(0)%3b_.html class="gmc_title">발생동향</a>
                             	<div class="gmc_list">
                                     <ul>
-                                        <li><a href="bdBoardList62bd.html?brdId=1&amp;brdGubun=11">국내 발생 현황</a></li>
-                                        <li><a href="bdBoardListb8cf.html?brdId=1&amp;brdGubun=14">국외 발생 현황</a></li>
-                                        <li><a href="bdBoardList0949.html?brdId=1&amp;brdGubun=13">시도별 발생동향</a></li>
-                                        <li><a href="bdBoardList98a5.html?brdId=1&amp;brdGubun=12">확진환자 이동경로</a></li>
+                                        <li><a href="/domesticPat.do">국내 발생 현황</a></li>
+                                        <li><a href="/overseaPat.do">국외 발생 현황</a></li>
+                                        <li><a href="/detailPat.do">시도별 발생동향</a></li>
+                                        <li><a href="/movingPat.do">확진환자 이동경로</a></li>
                                     </ul>                              	
                             	</div>
                             </li>                      
@@ -484,7 +484,7 @@ function openNav() {
                                     <ul>
                                         <li><a href="guidelineList2bef.html?brdId=6&amp;brdGubun=61">기본 수칙</a> </li>
                                         <li><a href="guidelineList99ba.html?brdId=6&amp;brdGubun=63">공동체 수칙</a> </li>
-                                        <li><a href="guidelineList0a61.html?brdId=6&amp;brdGubun=62&amp;dataGubun=">장소별 실천 수칙</a> </li>
+                                        <li><a href="/locRule.do">장소별 실천 수칙</a> </li>
                                     </ul>
                                 </div>
                             </li>
