@@ -1,4 +1,5 @@
 var markers = []; 		  // 마커를 담을 배열
+
 var ps;		// 장소 검색 객체	
 var map;	// 지도 객체
 var placeOverlay;	// 커스텀 오버레이 객체
@@ -124,8 +125,8 @@ function useGeolocation() {
 	        var lon = position.coords.longitude; // 경도
 	        var locPosition = new kakao.maps.LatLng(lat, lon); // 좌표 생성
 	      
-	        map.setLevel(3);
 	        // 지도 중짐좌표 및 지도 레벨 설정
+	        map.setLevel(3);
 	        map.setCenter(locPosition);
 	            
 	      });
@@ -142,7 +143,6 @@ function searchPlaces() {
 	keywordSearchUseCurrKeywd();
 	$('.side_wrap').addClass('open');
 }
-
 
 //키워드 검색을 요청하는 함수
 function keywordSearchUseCurrKeywd(){
@@ -436,15 +436,8 @@ function mapBtnTgl() {
 	});
 }
 
-
-
 $(window).on('resize', function(){
 	mapSideTop();
 	mapSideHeight();
 	listViewResponse();
 });
-
-
-
-
-
