@@ -436,15 +436,8 @@ function mapBtnTgl() {
 	});
 }
 
-
-
 $(window).on('resize', function(){
 	mapSideTop();
 	mapSideHeight();
 	listViewResponse();
 });
-
-
-
-
-
