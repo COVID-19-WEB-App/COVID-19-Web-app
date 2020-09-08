@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<!DOCTYPE html>
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-<meta charset="UTF-8">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
+<jsp:include page="/header.do" />
 
 <script type="text/javaScript" language="javascript">
 
@@ -487,6 +487,4 @@ function fn_submit(){
 
 
 
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-</body>
-</html>
+<jsp:include page="/footer.do" />

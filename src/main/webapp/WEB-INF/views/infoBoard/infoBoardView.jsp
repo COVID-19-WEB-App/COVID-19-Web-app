@@ -1,14 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-<html lang="ko">
-<!-- Mirrored from ncov.mohw.go.kr/infoBoardList.do?brdId=3&brdGubun=32 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Aug 2020 04:48:24 GMT -->
-<!-- Added by HTTrack -->
-<meta name="description" content="코로나바이러스감염증-19,홍보자료 & FAQ,홍보자료,전체">
-<meta property="og:description" content="코로나바이러스감염증-19,홍보자료 & FAQ,홍보자료,전체">	
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
+<jsp:include page="/header.do" />
+
 <script type="text/javascript">
 $(document).ready(function(){
 	//목록버튼
@@ -136,6 +132,4 @@ $(document).ready(function(){
 		</div>
 	</div>
 
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-</body>
-</html>
+<jsp:include page="/footer.do" />

@@ -1,42 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<!DOCTYPE html>
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-
-<html lang="ko">
-<!-- Mirrored from ncov.mohw.go.kr/factBoardList.do?brdId=3&brdGubun=33 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Aug 2020 04:46:11 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-<meta charset="UTF-8">
-<title>코로나바이러스감염증-19 &gt; 뉴스 & 이슈 &gt; 코로나19 팩트 & 이슈체크</title>
-<meta name="description" content="코로나바이러스감염증-19,뉴스 & 이슈,코로나19 팩트 & 이슈체크,">
-<meta property="og:description" content="코로나바이러스감염증-19,뉴스 & 이슈,코로나19 팩트 & 이슈체크,">
-
-
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<meta name="author" content="보건복지부, 코로나바이러스감염증-19(COVID-19), 질병관리본부">     
-<meta name="keywords" content="코로나바이러스감염증-19(COVID-19), 코로나바이러스감염증-19, 코로나바이러스, 보건복지부">	
-<meta name="copyright" content="보건복지부">
-
-<meta property="og:url" content="index.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="코로나바이러스감염증-19(COVID-19)">
-<meta property="og:locale" content="ko">
-<meta property="og:title" content="코로나바이러스감염증-19(COVID-19)">
-<meta property="og:image" content="static/image/header/homeimg.png"> 
-    
-<link rel="icon" type="image/png" sizes="64x64" href="static/image/header/ROK.png">
-<link rel="stylesheet" href="static/css/co_common890c.css?ver=20200629">
-<link rel="stylesheet" href="static/css/co_componenteeec.css?ver=20200702">
-<link rel="stylesheet" href="static/css/lightslider.min.css">
-
-<script src="static/js/jquery-1.11.2.min.js"></script>
-<script src="static/js/lightslider.min.js"></script>
-<script src="static/js/co_common890c.js?ver=20200629"></script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
+<jsp:include page="/header.do" />
 
 <script type="text/javaScript" language="javascript">
 
@@ -107,13 +74,6 @@ function search( where ){
 
 </script>
 
-	<link rel="stylesheet" href="static/css/chart_kr0a6d.css?ver=20200710">
-	<script src="static/js/Chart.min.js"></script>
-	<script src="static/js/chartjs-plugin-datalabels.min.js"></script>
-	<script src="static/js/chart_krff8e.js?ver=20200724"></script>
-</head>
-
-<body>
 
 		
 
@@ -333,10 +293,7 @@ function fn_fileDown(name, path, seq){
 	                
 	                
 
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+<jsp:include page="/footer.do" />
 
 
 
-
-</body>
-</html>

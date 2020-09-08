@@ -1,35 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<!DOCTYPE html>
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-<html>
-<head>
-<meta charset="UTF-8">
-<title>코로나바이러스감염증-19 &gt; 뉴스</title>
-</head>
-<meta name="description" content="코로나바이러스감염증-19,홍보자료 & FAQ,홍보자료,전체">
-<meta property="og:description" content="코로나바이러스감염증-19,홍보자료 & FAQ,홍보자료,전체">	
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
+<jsp:include page="/header.do" />
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<meta name="author" content="보건복지부, 코로나바이러스감염증-19(COVID-19), 질병관리본부">     
-<meta name="keywords" content="코로나바이러스감염증-19(COVID-19), 코로나바이러스감염증-19, 코로나바이러스, 보건복지부">	
-<meta name="copyright" content="보건복지부">
-
-<meta property="og:url" content="index.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="코로나바이러스감염증-19(COVID-19)">
-<meta property="og:locale" content="ko">
-<meta property="og:title" content="코로나바이러스감염증-19(COVID-19)">
-<meta property="og:image" content="static/image/header/homeimg.png"> 
-    
-<link rel="icon" type="image/png" sizes="64x64" href="static/image/header/ROK.png">
-<link rel="stylesheet" href="static/css/co_common890c.css?ver=20200629">
-<link rel="stylesheet" href="static/css/co_componenteeec.css?ver=20200702">
-<link rel="stylesheet" href="static/css/lightslider.min.css">
 <link rel="preload" as="image" href="https://static.sbsdlab.co.kr/image/thumb_default.png">
 <link rel="preload" as="script" href="https://static.sbsdlab.co.kr/common/jquery.lazy/jquery.lazy.min.js">
 <body>
@@ -207,10 +182,7 @@ function lazyerror(){loadScript("https://img.sbs.co.kr/news/common/pc/js/jquery-
 	</div>
 </form>
 
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+<jsp:include page="/footer.do" />
 
 
 
-
-</body>
-</html>

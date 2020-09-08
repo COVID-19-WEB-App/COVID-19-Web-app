@@ -1,16 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
-<!DOCTYPE html>
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-<html>
-<head>
-<meta charset="UTF-8">
-<title>코로나바이러스감염증-19 &gt; 정보공유 & FAQ &gt; 정보공유
-
-	 &gt; 글쓰기</title>
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
+<jsp:include page="/header.do" />
 <!-- 	<div class="infoForm" style="padding: 50px; margin-left: 600px"> -->
 		
 <!-- 		<div class="infoShare"> -->
@@ -160,6 +153,4 @@
 			</div>
 		</div>
 	</div>
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-</body>
-</html>
+<jsp:include page="/footer.do" />
