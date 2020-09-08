@@ -278,21 +278,19 @@ function openNav() {
                                     </ul>
                                 </div></div>                              
                             </li>
-                            <li><a href="tcmBoardList81c5.html?brdId=3&amp;brdGubun=">뉴스 & 이슈</a>
+                            <li><a href="covidNews.do">뉴스 & 이슈</a>
                                 <div class="g_sub"><div>
                                     <ul>
-                                        <li><a href="tcmBoardList81c5.html?brdId=3&amp;brdGubun=">&middot; 보도자료</a></li>
-                                        <li><a href="factBoardListacb8.html?brdId=3&amp;brdGubun=33">&middot; 코로나19 이슈체크</a></li>
-                                        <li><a href="maskBoardList3767.html?brdId=3&amp;brdGubun=36">&middot; 공적마스크 공급현황</a></li>
-                                        <li><a href="lastBannerListced8.html?brdId=3&amp;brdGubun=38">&middot; 일별 브리핑 모아보기</a></li>
+                                        <li><a href="covidNews.do">&middot; 보도자료</a></li>
+                                        <li><a href="covidFact.do">&middot; 코로나19팩트 & 이슈체크</a></li>
                                     </ul>
                                 </div></div>
                             </li>
-                            <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">홍보자료 & FAQ</a>
+                            <li><a href="infoBoard.do">정보공유 & FAQ</a>
                                 <div class="g_sub"><div>
                                     <ul>
-                                        <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">&middot; 홍보자료</a></li>
-                                        <li><a href="faqBoardList0b7a.html?brdId=3&amp;brdGubun=37">&middot; FAQ</a></li>
+                                        <li><a href="infoBoard.do">&middot; 정보공유</a></li>
+                                        <li><a href="faqBoard.do">&middot; FAQ</a></li>
                                     </ul>
                                 </div></div>
                             </li>
@@ -496,3 +494,6 @@ function openNav() {
 			</div>
 		</div>
 		
+
+</body>
+</html>
