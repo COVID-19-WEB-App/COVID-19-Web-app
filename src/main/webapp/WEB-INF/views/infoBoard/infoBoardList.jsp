@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE HTML>
 <jsp:include page="/WEB-INF/views/include/header.jsp" />
 <html lang="ko">
@@ -166,9 +167,9 @@ function fn_submit(){
 		            <div class="sub_top">
 		                <div class="st_navigation">
 		                    <ul>
-		                        <li><a href="index.html"><span class="hdn">홈</span></a></li>
-		                        <li><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '');">정보공유 & FAQ</a></li>
-		                        <li><a href="infoBoardList306c.html?brdId=3&amp;brdGubun=32">정보공유</a></li>
+		                        <li><a href="main.do"><span class="hdn">홈</span></a></li>
+		                        <li><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoard.do');">정보공유 & FAQ</a></li>
+		                        <li><a href="infoBoard.do">정보공유</a></li>
 		                    </ul>
 		                </div>
 		                <div class="st_title">
@@ -182,12 +183,10 @@ function fn_submit(){
                         <div class="tab_flt cnt6-3-2">
                             <ul>
                                 <li class="on"><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '', '');"><span>전체</span></a></li>
+                                <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '324', '');"><span>공지사항</span></a></li>
                                 <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '321', '');"><span>일반인</span></a></li>
-                                <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '327', '');"><span>(학)부모</span></a></li>
                                 <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '323', '');"><span>입국자 및 해외여행객</span></a></li>
                                 <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '322', '');"><span>자가격리자</span></a></li>
-                                <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '324', '');"><span>의료기관</span></a></li>
-                                <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '325', '');"><span>집단 및 다중이용시설</span></a></li>
                                 <li ><a href="javascript:void(0);" onclick="javascript:fn_goMenu('/infoBoardList.do', '3', '32', '326', '');"><span>기업 및 시장</span></a></li>
                             </ul>
                         </div>
@@ -203,10 +202,10 @@ function fn_submit(){
 	                
 	                
 	                 
-	                <!--게시판 목록-->
+	                <!--게시판 상단부-->
 	                <div class="board_top">
 	                    <div class="fl_l">
-	                        <p class="bt_count">총<strong>1043</strong>건</p>
+	                        <p class="bt_count">총<strong>태선이 때리고싶은 횟수 1043</strong>건</p>
 	                    </div>
 	                    <div class="fl_r">
 	                            <fieldset>
@@ -216,7 +215,6 @@ function fn_submit(){
 	                                        <select id="u_shcate" name="search_item" class="select" title="검색항목 선택">
 	                                            <option value="1" >제목 </option>
 	                                            <option value="2" >내용 </option>
-	                                       
 	                                        </select>
 	                                    </div>
 	                                    <div>
@@ -229,6 +227,8 @@ function fn_submit(){
 	                            </fieldset>
 	                    </div>
 	                </div>
+	                
+	                
 					<div class="board_list">
                         <table>
                             <caption><span class="hdn">전체 목록 : 번호, 제목, 담당, 작성일, 첨부 구성 제목 클릭시 게시물 상세 내용으로
@@ -239,6 +239,7 @@ function fn_submit(){
                                 <col class="m_dp_n" style="width:192px;">
                                 <col style="width:96px;">
                                 <col class="m_dp_n" style="width:64px;">
+                                <col class="m_dp_n" style="width:64px;">
                             </colgroup>
                             <thead>
                                 <tr>
@@ -247,136 +248,74 @@ function fn_submit(){
                                     <th class="m_dp_n" scope="col">담당</th>
                                     <th scope="col">작성일</th>
                                     <th class="m_dp_n" scope="col">첨부</th>
+                                    <th class="m_dp_n" scope="col">조회수</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach items="${list.ilist }" var="info">
                             
-							
-                                <tr>
-                                    <td class="m_dp_n">1043</td>
+                            	 <tr>
+                                    <td class="m_dp_n">${info.info_idx}</td>
+                                   
                                     <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3293', '' , '');">[이미지] 국민내일배움카드 코로나19 한시적 확대 연장 지원</a>
+<%--                                         <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3293', '' , '');">${info.info_title }</a> --%>
+										<a class="bl_link" href="<%= request.getContextPath() %>infoBoardDetail.do?info_idx=${info.info_idx}">${info.info_title }</a>
                                			<span class="ico_new"><span class="hdn">새글</span></span>
                                     </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-05 09:40</td>
-                                    <td class="m_dp_n"></td>
+                                    <td class="m_dp_n">${info.member_nick }</td>
+                                    <td>${info.info_date }</td>
+                                    <td class="m_dp_n">${info.info_hits }</td>
+                                    <td class="m_dp_n">${info.info_hits }</td>
                                 </tr>
                             
-                                <tr>
-                                    <td class="m_dp_n">1042</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3292', '' , '');">[이미지] 7월 소비자물가 2달 만에 상승 전환</a>
-                               			<span class="ico_new"><span class="hdn">새글</span></span>
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-05 09:40</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1041</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3289', '' , '');">[이미지] 한국판 뉴딜 2025년 미리보기 ‘고용·사회 안전망편’</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-04 11:00</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1040</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3288', '' , '');">[카드뉴스] [딱풀이] 한국판 뉴딜 10대 시그니처 사업 친환경 미래 모빌리티란?</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-04 10:59</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1039</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3287', '' , '');">[이미지] 코로나19 계기 식문화개선 국민백일장 당선작 모음</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-04 10:56</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1038</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3285', '' , '');">[이미지] 한국판 뉴딜 미리보기 ‘2025 그린 뉴딜’</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-04 10:52</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1037</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3284', '' , '');">[이미지] 한국판 뉴딜 미리보기 ‘2025 디지털 뉴딜’</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-04 10:40</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1036</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3283', '' , '');">[이미지] 8대 소비쿠폰 총정리</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">대한민국 정부</td>
-                                    <td>2020-08-04 10:39</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1035</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3282', '' , '');">[동영상] [친절한 경제 돋보기] 휴가 계획이 있다면? 8대 분야 할인소비쿠폰 주목!</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">기획재정부</td>
-                                    <td>2020-08-04 10:05</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
-                                <tr>
-                                    <td class="m_dp_n">1034</td>
-                                    <td class="ta_l">
-                                        <a class="bl_link" href="javascript:void(0);" onclick="javascript:fn_boardView('/infoBoardView.do','3','32','3281', '' , '');">[동영상] 하반기 소비 및 지역경제 활성화를 위한 정책은?!</a>
-                               			
-                                    </td>
-                                    <td class="m_dp_n">기획재정부</td>
-                                    <td>2020-08-04 10:04</td>
-                                    <td class="m_dp_n"></td>
-                                </tr>
-                            
+                            </c:forEach>
                             
                             </tbody>
                         </table>
                     </div>
+                    <br>
+                    <button type="button" class="boardInsert" style="float: right;">글쓰기</button>
 	                <!--페이징-->
-					<div class="paging">
-						<a href="#" class="p_first" title="처음" onclick="fn_search(1); return false;"><span class="hdn">처음페이지</span></a><a href="#" class="p_prev" title="이전" onclick="fn_search(1); return false;"><span class="hdn">이전페이지</span></a>&nbsp;&nbsp;<strong>1</strong>&nbsp;&nbsp;<a href="#" onclick="fn_search(2); return false;">2</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(3); return false;">3</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(4); return false;">4</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(5); return false;">5</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(6); return false;">6</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(7); return false;">7</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(8); return false;">8</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(9); return false;">9</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(10); return false;">10</a>&nbsp;&nbsp;<a href="#" class="p_next" title="다음" onclick="fn_search(11); return false;"><span class="hdn">다음페이지</span></a><a href="#" class="p_last" title="끝" onclick="fn_search(105); return false;"><span class="hdn">끝페이지</span></a>
-
-					</div>
+<!-- 					<div class="paging"> -->
+<!-- 						<a href="#" class="p_first" title="처음" onclick="fn_search(1); return false;"><span class="hdn">처음페이지</span></a><a href="#" class="p_prev" title="이전" onclick="fn_search(1); return false;"><span class="hdn">이전페이지</span></a>&nbsp;&nbsp;<strong>1</strong>&nbsp;&nbsp;<a href="#" onclick="fn_search(2); return false;">2</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(3); return false;">3</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(4); return false;">4</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(5); return false;">5</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(6); return false;">6</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(7); return false;">7</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(8); return false;">8</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(9); return false;">9</a>&nbsp;&nbsp;<a href="#" onclick="fn_search(10); return false;">10</a>&nbsp;&nbsp;<a href="#" class="p_next" title="다음" onclick="fn_search(11); return false;"><span class="hdn">다음페이지</span></a><a href="#" class="p_last" title="끝" onclick="fn_search(105); return false;"><span class="hdn">끝페이지</span></a> -->
+						
+<!-- 					</div> -->
+					
+					<div class="paging"><!-- section pagination -->
+			         <a href="<%= request.getContextPath() %>/infoBoard.do" class="p_first"><i class="p_first"></i></a>
+			        <c:choose>
+			        	<c:when test="${paging.blockStart > 1 }">
+			         		<a href="<%= request.getContextPath() %>/infoBoard.do?cPage=${paging.blockStart-1}" class="p_prev"></a>
+			        	</c:when>
+			        	<c:otherwise>
+			        		<a href="<%= request.getContextPath() %>/infoBoard.do?cPage=${paging.blockStart}" class="p_prev"></a>
+			        	</c:otherwise>
+			        </c:choose>
+			        <c:forEach begin="${paging.blockStart}" end="${paging.blockEnd}" var="page">
+			         <a href="<%= request.getContextPath() %>/infoBoard.do?cPage=${page}" class="num active"><span>${page}</span></a>
+			        </c:forEach> 
+			        
+			        <c:choose>
+			        	<c:when test="${paging.blockEnd+1 > paging.lastPage }">
+			         		<a href="<%= request.getContextPath() %>/infoBoard.do?cPage=${paging.blockEnd}" class="p_next"></a>
+			        	</c:when>
+			        	<c:otherwise>
+			         		<a href="<%= request.getContextPath() %>/infoBoard.do?cPage=${paging.blockEnd+1}" class="p_next"></a>
+			        	</c:otherwise>
+			   	   	</c:choose>
+			 	   	 
+			 	   	 <a href="<%= request.getContextPath() %>/infoBoard.do?cPage=${paging.lastPage}" class="p_last"></a>
+			      	<div class="btn_section" style="background-color:white">
+			   	  	</div>
 	                <!--페이징-->
+	                
+	                
 	                
 	                
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </form>
 
