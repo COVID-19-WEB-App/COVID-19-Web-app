@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.ProcessBuilder.Redirect;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -36,51 +37,20 @@ public class ShareController {
 	public ModelAndView slist(
 			@RequestParam(required=false, defaultValue="1") 
 			int cPage,
-			@RequestParam(required = false, defaultValue = "*")
-			String filter,
 			HttpServletResponse res
 			) {
 		
-		if(filter == "all") {
-			filter = "*";
-		}
 		ModelAndView mav = new ModelAndView();
 		int cntPerPage = 16;
-		Map<String,Object> map = shareSer.selectSlist(cPage, cntPerPage,filter);
+		Map<String,Object> map = shareSer.selectSlist(cPage, cntPerPage);
 
 		mav.addObject("paging", map.get("paging"));
 		mav.addObject("list", map);
-		
 		if(cPage == 1) {
 		mav.setViewName("share/list");
 		}else {
 			mav.setViewName("share/scroll");
-		} 
-		
-		
-		return mav;
-	}
-	
-	@RequestMapping("/share/filter.do")
-	public ModelAndView filterlist(
-			@RequestParam(required=false, defaultValue="1") 
-			int cPage,
-			@RequestParam(required = false, defaultValue = "*")
-			String filter,
-			HttpServletResponse res
-			) {
-		 
-		System.out.println("여기는 컨트롤러 필터링 맵을 받을거야 : " + filter);
-		ModelAndView mav = new ModelAndView();
-		int cntPerPage = 16;
-		Map<String,Object> map = shareSer.selectSlist(cPage, cntPerPage,filter);
-		
-		mav.addObject("paging", map.get("paging"));
-		mav.addObject("list", map);
-		
-		mav.setViewName("share/scroll");
-		
-		
+		}
 		return mav;
 	}
 	
@@ -111,10 +81,11 @@ public class ShareController {
 	
 	@RequestMapping("/share/board.do")
 	public ModelAndView sboard() {
+	
 		ModelAndView mav = new ModelAndView();
-
-		mav.setViewName("share/upload");
 		
+		
+		mav.setViewName("share/upload");
 		return mav;
 	}
 	
@@ -128,7 +99,11 @@ public class ShareController {
 			) {
 		ModelAndView mav = new ModelAndView(); 
 		String root = session.getServletContext().getRealPath("/");
+
+		
 		shareSer.shareup(share,file,root,request);
+		
+		
 		mav.setViewName("redirect:list.do");
 		
 		return mav;
