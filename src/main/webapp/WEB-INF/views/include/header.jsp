@@ -484,7 +484,7 @@ function openNav() {
                                     <ul>
                                         <li><a href="guidelineList2bef.html?brdId=6&amp;brdGubun=61">기본 수칙</a> </li>
                                         <li><a href="guidelineList99ba.html?brdId=6&amp;brdGubun=63">공동체 수칙</a> </li>
-                                        <li><a href="guidelineList0a61.html?brdId=6&amp;brdGubun=62&amp;dataGubun=">장소별 실천 수칙</a> </li>
+                                        <li><a href="/locRule.do">장소별 실천 수칙</a> </li>
                                     </ul>
                                 </div>
                             </li>

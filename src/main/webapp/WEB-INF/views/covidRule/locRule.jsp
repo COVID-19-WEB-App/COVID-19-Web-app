@@ -5,18 +5,19 @@
 
 <jsp:include page="/header.do"/>
 
-	<div class="container"><!-- main_container -->
+
+	<div class="container" style="background:white;"><!-- main_container -->
 		<div>
 			<div id="content" class="content">
 				<div>
 		            <div class="sub_top">
 		                <div class="st_navigation">
 		                    <ul>
-		                        <li><a href="index.html"><span class="hdn">홈</span></a></li>
-		                        <li><a href="guidelineListbf25.html?brdId=6&amp;brdGubun=61&amp;dataGubun=611">생활 속 거리 두기</a></li>
+		                        <li><a href="/main.do"><span class="hdn">홈</span></a></li>
+		                        <li><a href="/locRule.do">생활 속 거리 두기</a></li>
 		                        
 		                        
-		                        <li><a href="guidelineList5cfb.html?brdId=6&amp;brdGubun=62">장소별 실천 수칙</a></li>
+		                        <li><a href="/locRule.do">장소별 실천 수칙</a></li>
 		                    </ul>
 		                </div>
 		                <div class="st_title">
@@ -31,7 +32,7 @@
 		             <!-- 장소별 실천 수칙 -->
                         <div class="tab_flt cnt2-2-2">
                             <ul>
-                                <li class="on"><a href="guidelineList5cfb.html?brdId=6&amp;brdGubun=62"><span>설명 자료</span></a></li>
+                                <li class="on"><a href="/locRule.do"><span>설명 자료</span></a></li>
                                 <li ><a href="guidelineListf207.html?brdId=6&amp;brdGubun=62&amp;dataGubun=622"><span>홍보 자료</span></a></li>
                             </ul>
                         </div>
