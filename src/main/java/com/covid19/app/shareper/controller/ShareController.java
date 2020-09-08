@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+
+import java.lang.ProcessBuilder.Redirect;
+
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -51,12 +54,13 @@ public class ShareController {
 		mav.addObject("paging", map.get("paging"));
 		mav.addObject("list", map);
 		
+
 		if(cPage == 1) {
 		mav.setViewName("share/list");
 		}else {
 			mav.setViewName("share/scroll");
+
 		} 
-		
 		
 		return mav;
 	}
@@ -79,8 +83,6 @@ public class ShareController {
 		mav.addObject("list", map);
 		
 		mav.setViewName("share/scroll");
-		
-		
 		return mav;
 	}
 	
@@ -115,6 +117,7 @@ public class ShareController {
 
 		mav.setViewName("share/upload");
 		
+
 		return mav;
 	}
 	
@@ -129,6 +132,7 @@ public class ShareController {
 		ModelAndView mav = new ModelAndView(); 
 		String root = session.getServletContext().getRealPath("/");
 		shareSer.shareup(share,file,root,request);
+
 		mav.setViewName("redirect:list.do");
 		
 		return mav;

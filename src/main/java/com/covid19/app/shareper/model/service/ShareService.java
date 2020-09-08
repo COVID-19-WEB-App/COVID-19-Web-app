@@ -60,9 +60,7 @@ public class ShareService {
 		sharedao.insertFile(shf);
 	}
 
-	
-	
-	
+
 	public Map<String, Object> selectSlist(int cPage, int cntPerPage,String filter) {
 		
 		 Map<String, Object> commandMap 
@@ -85,6 +83,7 @@ public class ShareService {
 		return commandMap;
 			
 		}
+
 
 	public Map<String, Object> sharedetail(int share_idx) {
 		Map<String, Object> commandMap 

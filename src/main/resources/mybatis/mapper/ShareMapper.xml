@@ -57,6 +57,7 @@
 			      and 1=1
 			   	</when>
 		 	</choose>
+
 				order by s.share_idx desc
 			)s3
 		)where rnum between #{start} and #{end}
@@ -67,6 +68,7 @@
 		select count(*) from shar
 	</select>
 	
+
 	<select id="selectContentCnt2" parameterType="String" resultType="int">
 		select count(*) from shar where sharefield = #{value}
 	</select>

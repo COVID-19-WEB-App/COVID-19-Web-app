@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 <link rel="stylesheet" type="text/css"
 	href="/resources/static/css/sharelist.css" />
@@ -480,7 +480,7 @@
 												참여하였습니다.</span>
 									</a></li>
 
-d
+
 									<!-- 리워드 수량 제한이 있는 경우 -->
 
 
@@ -518,4 +518,4 @@ d
 
 				</div>
 </div>
-				<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+				<jsp:include page="/footer.do" />

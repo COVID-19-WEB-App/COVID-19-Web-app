@@ -1,7 +1,9 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 
 <jsp:include page="/header.do" />
 <style>
@@ -91,6 +93,7 @@ $(document).ready(function() {
 							<td class="ta_l">
 							<select name = "shareField">
 							<option value="li">리빙</option>
+
 							<option value="re">지역재생</option>
 							<option value="fo">푸드</option>
 							<option value="te">테크</option>
@@ -144,7 +147,7 @@ $(document).ready(function() {
 							<button id = "deleteproduct" type="button">삭제</button>
 							</td>
 						</tr>
-	
+
 								</tbody>
 							</table>
 							<br>
