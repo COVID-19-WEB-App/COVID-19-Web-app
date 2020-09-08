@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.stereotype.Service;
 
 import com.covid19.app.admin.login.vo.AdminMember;
 import com.covid19.app.admin.login.vo.AdMemberList;
@@ -13,6 +14,7 @@ import com.covid19.app.admin.login.vo.CovidPat;
 import common.util.Paging;
 import common.util.adPaging;
 
+@Service
 public interface AdminService {
 
 	//로그인 기능
