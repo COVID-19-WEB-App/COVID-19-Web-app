@@ -351,6 +351,7 @@ function openNav() {
 					</div>	
 					
 					<!--20200221 검색추가 시작-->
+					
 					<div class="p_search">
 						<form id="searchForm1" name="searchForm" action="http://ncov.mohw.go.kr/search/search.jsp" method="post">
 							<input type="hidden" id="pageNum" name="pageNum" value="1" />					<!-- 현재페이지 -->
