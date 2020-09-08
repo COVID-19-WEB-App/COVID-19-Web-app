@@ -60,24 +60,30 @@ public class ShareService {
 		sharedao.insertFile(shf);
 	}
 
-	
-	
-	
-	public Map<String, Object> selectSlist(int cPage, int cntPerPage) {
+
+	public Map<String, Object> selectSlist(int cPage, int cntPerPage,String filter) {
 		
 		 Map<String, Object> commandMap 
 	 		= new HashMap<String, Object>();
-	 //페이징 처리를 위한 객체 생성
-	 Paging p = new Paging(sharedao.selectContentCnt()
-			 ,cPage,cntPerPage);
-	 
-	 //현재 페이지에 필요한 게시물 목록
-	 List<Share> nlist = sharedao.selectshar(p);
-	 commandMap.put("nlist", nlist);
-	 commandMap.put("paging", p);
-	return commandMap;
-		
-	}
+		 
+		 int total = 0;
+		 if(filter.equals("*")) {
+			total = sharedao.selectContentCnt(filter);
+		 }else{
+			 total = sharedao.selectContentCnt2(filter);
+		 }
+		 //페이징 처리를 위한 객체 생성
+		 Paging p = new Paging(total
+				 ,cPage,cntPerPage);
+		 p.setFilter(filter);
+		 //현재 페이지에 필요한 게시물 목록
+		 List<Object> nlist = sharedao.selectshar(p);
+		 commandMap.put("nlist", nlist);
+		 commandMap.put("paging", p);
+		return commandMap;
+			
+		}
+
 
 	public Map<String, Object> sharedetail(int share_idx) {
 		Map<String, Object> commandMap 

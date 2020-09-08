@@ -34,14 +34,13 @@ public class ShareDao {
 	public void insertThumb(Map<String,String> fileInfo) {
 		sqlSession.insert("SHARE.insertThumb" , fileInfo);
 	}
-
-
-	public int selectContentCnt() {
-		return sqlSession.selectOne("SHARE.selectContentCnt");
+	public int selectContentCnt(String filter) {
+		return sqlSession.selectOne("SHARE.selectContentCnt",filter);
 	}
 
 
-	public List<Share> selectshar(Paging p) {
+	public List<Object> selectshar(Paging p) {
+
 		return sqlSession.selectList("SHARE.selectshar",p);
 	}
 
@@ -54,6 +53,13 @@ public class ShareDao {
 	public void insertGoods(Goods goods) {
 		sqlSession.insert("SHARE.insertGoods", goods);
 	}
+
+	public int selectContentCnt2(String filter) {
+		return sqlSession.selectOne("SHARE.selectContentCnt2",filter);
+	}
+
+
+
 
 
 
