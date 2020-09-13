@@ -36,7 +36,7 @@ function lazyerror(){loadScript("https://img.sbs.co.kr/news/common/pc/js/jquery-
 <!-- <input type="hidden" id="dataGubun" name="dataGubun" value="" /> -->
 <!-- <input type="hidden" id="ncvContSeq" name="ncvContSeq" /> -->
 
-	<div class="container">
+	<div class="container" style="background:white">
 	
 			<div>
 			<div id="content" class="content">

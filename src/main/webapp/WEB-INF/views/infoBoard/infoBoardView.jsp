@@ -17,7 +17,7 @@ $(document).ready(function(){
 	})
 	//삭제버튼
 	$("#btnDelete").click(function() {
-		$(location).attr("href", "deleteInfo.do?info_idx=${data.infoshare.info_idx}");
+		$(location).attr("href", "deleteInfo.do?info_idx=${data.info_idx}");
 	});
 	
 	
@@ -26,6 +26,18 @@ $(document).ready(function(){
 })
 
 </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+})
+
+
+
+
+
+</script>
+
 
 <div class="desc_notice" style="left:15%; width:80%">
 <!--       <div class="tit_notice"> -->
@@ -115,8 +127,31 @@ $(document).ready(function(){
 
                                 </div>
                             </div>
+							<p>&nbsp;</p>
+							<div style="border: 1px solid; width: 600px; padding: 5px">
+								<form name="form1" action="<%= request.getContextPath() %>/infoReplySave.do" method="post">
+									<input type="hidden" name="info_idx" value="<c:out value="${data.infoshare.info_idx}"/>">
+									작성자:<input type="text" name="reply_writer"	size="20" maxlength="20"><br/>
+									<textarea name="reply_content" rows="3" cols="60" maxlength="500" placeholder="댓글을 달아주세요."></textarea>								
+<!-- 									<a href="#" onclick="fn_formSubmit()">저장</a>							 -->
+									<button style="color:white; text-align:center; font-size:1.5ww">저장</button>
+								</form>
+								
+							</div>
+							
+							<c:forEach var="replylist" items="${replylist}" varStatus="status">
+							    <div style="border: 1px solid gray; width: 600px; padding: 5px; margin-top: 5px;">   
+							        <c:out value="${replylist.reply_writer}"/> <c:out value="${replylist.reg_date}"/>
+							        <a href="#" onclick="fn_replyDelete('<c:out value="${replylist.reply_idx}"/>')">삭제</a>
+							        <a href="#" onclick="fn_replyUpdate('<c:out value="${replylist.reply_idx}"/>')">수정</a>
+							        <br/>
+							        <div id="reply<c:out value="${replylist.reply_idx}"/>"><c:out value="${replylist.reply_content}"/></div>
+							    </div>
+							</c:forEach>
 
-
+							
+							
+							
                         </div>
                     	<br>
 						<div class="info_btn" style="float: right">

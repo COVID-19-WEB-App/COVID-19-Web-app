@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="Reply">
+    	<select id="getReplyCount" resultType="REPLY">
+    		select count(reply_idx)
+    		from info_reply
+    		where info_idx = #{info_idx}
+    	</select>
+    	
+    	<select id="replyList" resultType="REPLY">
+    		select * from info_reply
+    		where info_idx = #{info_idx}
+    		order by reply_idx asc
+    	</select>
+    
+    
+    	<select id="selectReply" resultType="REPLY">
+    	
+    	</select>
+    
+    
+    </mapper>

@@ -1,6 +1,7 @@
 package com.covid19.app.board.model.service;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.covid19.app.board.model.dao.InfoDao;
+import com.covid19.app.board.model.vo.InfoReply;
 import com.covid19.app.board.model.vo.InfoShare;
 
 import common.exception.FileException;
@@ -50,6 +52,22 @@ public class InfoServiceImpl implements InfoService{
 		return commandMap;
 	}
 	
+	@Override
+	public List<?> selectReplyList(int info_idx) {
+		
+		return infoDao.selectInfoReplyList(info_idx);
+	}
+
+	
+
+	
+	
+//	정보공유 게시판 상세조회
+//	@Override
+//	public InfoShare selectInfoDetail(Map<String, Object> paramMap) {
+////		infoDao.updateInfoHit(paramMap);
+//		return infoDao.selectInfoDetail(paramMap);
+//	}
 	//정보공유 게시판 상세조회
 	@Override
 	public Map<String, Object> selectInfoDetail(int info_idx) {
@@ -100,6 +118,17 @@ public class InfoServiceImpl implements InfoService{
 		
 	}
 
+	
+	//게시글등록
+	@Override
+	public void insertInfoReply(InfoReply infoReply) {
+	
+		
+		infoDao.insertReply(infoReply);
+	}
+
+	
+	
 	
 
 	

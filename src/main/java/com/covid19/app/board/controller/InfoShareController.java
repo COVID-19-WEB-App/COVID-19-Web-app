@@ -4,16 +4,19 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.processing.FilerException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.covid19.app.board.model.service.InfoService;
+import com.covid19.app.board.model.vo.InfoReply;
 import com.covid19.app.board.model.vo.InfoShare;
 import com.covid19.app.member.model.vo.Member;
 
@@ -46,16 +49,24 @@ public class InfoShareController {
 	}
 	
 	//정보공유 게시판 상세조회
+//	@RequestMapping(value = "infoBoardDetail.do", method = RequestMethod.GET)
+//	public String InfoView(@RequestParam Map<String, Object> paramMap, Model model){
+//		
+//		model.addAttribute("replyList", infoService.getReplyList(paramMap));
+//		model.addAttribute("data", infoService.selectInfoDetail(paramMap));
+//		return "infoBoard/infoBoardView";
+//	}	
 	@RequestMapping(value = "infoBoardDetail.do", method = RequestMethod.GET)
-	public ModelAndView InfoView(int info_idx){
+	public ModelAndView InfoView(@RequestParam Map<String, Object> paramMap, int info_idx){
 		ModelAndView mav = new ModelAndView();
 		int info_hits = 0;
 		
-		
 		Map<String,Object> commandmap = infoService.selectInfoDetail(info_idx);
+		List<?> replylist = infoService.selectReplyList(info_idx);
 		infoService.updateInfoHit(info_idx);
 		mav.addObject("info_hits", info_hits);
 		mav.addObject("data", commandmap);
+		mav.addObject("replylist", replylist);
 		mav.setViewName("infoBoard/infoBoardView");
 		return mav;
 	}	
@@ -93,6 +104,15 @@ public class InfoShareController {
 		return mav;
 	}
 	
+	//댓글저장
+	@RequestMapping(value="infoReplySave.do", method = RequestMethod.POST)
+	public String infoReplySave(HttpServletRequest request, InfoReply infoReply) {
+		
+		infoService.insertInfoReply(infoReply);
+		
+		return "redirect:/infoBoardDetail.do?info_idx=" + infoReply.getInfo_idx();
+		
+	}
 }
 
 

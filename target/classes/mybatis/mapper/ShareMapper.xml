@@ -49,7 +49,6 @@
 				select s.sharefield,s.sharename,s.simpleinfo,s.sharecontent,s.sharemoney,s.sharedateen,s.share_idx,s.sharedate,st.rename_file 
 				from shar s, share_thumb st
                 where s.share_idx = st.share_idx
-
             <choose>
 			    <when test='filter != "*"'>
 			      and s.sharefield = #{filter}
@@ -74,7 +73,6 @@
 		select count(*) from shar where sharefield = #{value}
 	</select>
 	
-
 	<select id="selectDetail" resultType="hashmap">
 		select s.*, st.rename_file
 		from shar s, share_thumb st

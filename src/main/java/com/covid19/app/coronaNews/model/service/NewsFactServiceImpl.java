@@ -31,7 +31,7 @@ public class NewsFactServiceImpl implements NewsFactService{
 	private static String COVID_FACT_URL = "http://ncov.mohw.go.kr/factBoardList.do?brdId=3&brdGubun=33";
 	
 	//시작하자마자 메소드를 실행하게 해주는 어노테이션
-//	@PostConstruct
+	@PostConstruct
 	public List<CovidNews> getCovidNews() throws IOException {
 		
 		List<CovidNews> newsList = new ArrayList<>();
@@ -70,7 +70,7 @@ public class NewsFactServiceImpl implements NewsFactService{
 	}
 
 	
-	@PostConstruct
+//	@PostConstruct
 	public List<FactCheck> getCoronaFact() throws IOException {
 		
 		List<FactCheck> factList = new ArrayList<>();

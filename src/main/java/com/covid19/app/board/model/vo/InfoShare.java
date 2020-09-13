@@ -4,19 +4,20 @@ import java.util.Date;
 
 public class InfoShare {
 
-	private String member_id;
-	private String member_nick;
-	private String member_rank;
-	private int info_idx;
-	private String info_title;
-	private String info_content;
-	private Date info_date;
-	private int info_hits;
+	private String member_id; //회원 아이디
+	private String member_nick; //회원 닉네임
+	private String member_rank; //회원 등급
+	private int info_idx; //게시글 번호
+	private String info_title; //게시글 제목
+	private String info_content; //게시글 내용
+	private Date info_date; //게시글 작성일자
+	private int info_hits; //게시글 조회 수
+	private int recnt; //게시글 댓글 수
 	@Override
 	public String toString() {
 		return "InfoShare [member_id=" + member_id + ", member_nick=" + member_nick + ", member_rank=" + member_rank
 				+ ", info_idx=" + info_idx + ", info_title=" + info_title + ", info_content=" + info_content
-				+ ", info_date=" + info_date + ", info_hits=" + info_hits + "]";
+				+ ", info_date=" + info_date + ", info_hits=" + info_hits + ", recnt=" + recnt + "]";
 	}
 	public String getMember_id() {
 		return member_id;
@@ -66,6 +67,13 @@ public class InfoShare {
 	public void setInfo_hits(int info_hits) {
 		this.info_hits = info_hits;
 	}
+	public int getRecnt() {
+		return recnt;
+	}
+	public void setRecnt(int recnt) {
+		this.recnt = recnt;
+	}
+
 	
 	
 }

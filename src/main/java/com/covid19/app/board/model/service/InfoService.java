@@ -7,6 +7,7 @@ import javax.annotation.processing.FilerException;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.covid19.app.board.model.vo.InfoReply;
 import com.covid19.app.board.model.vo.InfoShare;
 
 import common.exception.FileException;
@@ -29,6 +30,10 @@ public interface InfoService {
 	
 	//조회수 증가
 	public void updateInfoHit(int num);
+
+	public void insertInfoReply(InfoReply infoReply);
+
+	public List<?> selectReplyList(int info_idx);
 	
 	
 }
