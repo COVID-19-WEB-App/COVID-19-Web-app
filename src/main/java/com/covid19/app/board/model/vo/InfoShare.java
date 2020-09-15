@@ -13,11 +13,14 @@ public class InfoShare {
 	private Date info_date; //게시글 작성일자
 	private int info_hits; //게시글 조회 수
 	private int recnt; //게시글 댓글 수
+	private String info_img;
+	private String info_thumbimg;
 	@Override
 	public String toString() {
 		return "InfoShare [member_id=" + member_id + ", member_nick=" + member_nick + ", member_rank=" + member_rank
 				+ ", info_idx=" + info_idx + ", info_title=" + info_title + ", info_content=" + info_content
-				+ ", info_date=" + info_date + ", info_hits=" + info_hits + ", recnt=" + recnt + "]";
+				+ ", info_date=" + info_date + ", info_hits=" + info_hits + ", recnt=" + recnt + ", info_img="
+				+ info_img + ", info_thumbimg=" + info_thumbimg + "]";
 	}
 	public String getMember_id() {
 		return member_id;
@@ -73,6 +76,20 @@ public class InfoShare {
 	public void setRecnt(int recnt) {
 		this.recnt = recnt;
 	}
+	public String getInfo_img() {
+		return info_img;
+	}
+	public void setInfo_img(String info_img) {
+		this.info_img = info_img;
+	}
+	public String getInfo_thumbimg() {
+		return info_thumbimg;
+	}
+	public void setInfo_thumbimg(String info_thumbimg) {
+		this.info_thumbimg = info_thumbimg;
+	}
+	
+	
 
 	
 	

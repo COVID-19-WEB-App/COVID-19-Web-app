@@ -1,0 +1,13 @@
+	Board board = new Board();
+		
+		board.setCategory(req.getParameter("category"));
+		board.setB_title(req.getParameter("title"));
+		board.setB_content(req.getParameter("content"));
+		
+		//게시글 작성자 id입력
+		board.setUserid((int)req.getSession().getAttribute("userid"));
+		board.setUserrank((String)req.getSession().getAttribute("userrank"));
+		board.setUsername((String)req.getSession().getAttribute("username"));
+		board.setDept((String)req.getSession().getAttribute("userdept"));
+//		//게시글 번호 생성 - Dao이용
+		int boardnum = boardDao.selectBoardno();

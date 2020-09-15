@@ -76,6 +76,14 @@ public class InfoDao {
 	
 	public List<?> selectInfoReplyList(int info_idx){
 		return sqlSession.selectList("Info.selectInfoReplyList",info_idx);
+	}
+
+	public int deleteInfoReply(String reply_idx) {
+		return sqlSession.delete("Info.deleteInfoReply", reply_idx);
+	}
+
+	public int updateInfoReply(InfoReply infoReply) {
+		return sqlSession.update("Info.updateInfoReply", infoReply);
 	};
 	
 }

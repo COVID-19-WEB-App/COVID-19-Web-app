@@ -140,9 +140,9 @@ function fn_fileDown(name, path, seq){
 <input type="hidden" id="brdGubun" name="brdGubun" value="33" />
 <input type="hidden" id="dataGubun" name="dataGubun" value="" />
 
-	<div class="container"><!-- main_container -->
+	<div class="container" style="background-color: white"><!-- main_container -->
 		<div>
-			<div id="content" class="content">
+			<div id="content" class="content" >
 				<div>
 		            <div class="sub_top">
 		                <div class="st_navigation">
@@ -166,8 +166,8 @@ function fn_fileDown(name, path, seq){
 	                <!--게시판 목록-->	                
 	                 <div class="tab_flt cnt2-2-2">
                       <ul>
-                          <li class="on"><a href="factBoardListc7b6.html?brdId=3&amp;brdGubun=33&amp;dataGubun=331"><span>코로나19 팩트</span></a></li>
-                         <li ><a href="factBoardList26bc.html?brdId=3&amp;brdGubun=33&amp;dataGubun=332"><span>이슈체크</span></a></li>
+                          <li class="on"><a href="/covidFact.do"><span>코로나19 팩트</span></a></li>
+                         <li ><a href="/issueCheck.do"><span>이슈체크</span></a></li>
                       </ul>
                     </div>
                     

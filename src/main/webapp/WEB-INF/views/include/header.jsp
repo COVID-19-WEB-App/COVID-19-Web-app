@@ -278,19 +278,20 @@ function openNav() {
                                     </ul>
                                 </div></div>                              
                             </li>
-                            <li><a href="covidNews.do">뉴스 & 이슈</a>
+                            <li><a href="/covidNews.do">뉴스 & 이슈</a>
                                 <div class="g_sub"><div>
                                     <ul>
-                                        <li><a href="covidNews.do">&middot; 보도자료</a></li>
-                                        <li><a href="covidFact.do">&middot; 코로나19팩트 & 이슈체크</a></li>
+                                        <li><a href="/covidNews.do">&middot; 보도자료</a></li>
+                                        <li><a href="/covidFact.do">&middot; 코로나19팩트 & 이슈체크</a></li>
                                     </ul>
                                 </div></div>
                             </li>
-                            <li><a href="infoBoard.do">정보공유 & FAQ</a>
+                            <li><a href="/infoBoard.do">정보공유 & FAQ</a>
                                 <div class="g_sub"><div>
                                     <ul>
-                                        <li><a href="infoBoard.do">&middot; 정보공유</a></li>
-                                        <li><a href="faqBoard.do">&middot; FAQ</a></li>
+                                        <li><a href="/infoBoard.do">&middot; 정보공유</a></li>
+                                        <li><a href="/faqBoard.do">&middot; FAQ</a></li>
+                                        <li><a href="/notice.do">&middot; 공지사항</a></li>
                                     </ul>
                                 </div></div>
                             </li>
